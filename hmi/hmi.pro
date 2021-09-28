@@ -11,6 +11,11 @@ SOURCES += \
 
 RESOURCES += qml.qrc
 
+TRANSLATIONS += \
+    hmi_en_150.ts
+CONFIG += lrelease
+CONFIG += embed_translations
+
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
 
