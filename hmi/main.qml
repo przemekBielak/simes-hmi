@@ -1,5 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
+import QtQuick.Layouts 1.12
+import QtQuick.Controls 2.15
 
 Window {
     width: 640
@@ -7,148 +9,147 @@ Window {
     visible: true
     title: qsTr("Simes")
 
-    Rectangle {
-        id: page
-        color: "#ffffff"
+    ColumnLayout{
         anchors.fill: parent
-
+        spacing: 0
 
         Rectangle {
-            id: title
-            height: 40
-            color: "#ffffff"
-            border.width: 1
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.top: parent.top
-            anchors.topMargin: 0
-            anchors.rightMargin: 0
-            anchors.leftMargin: 0
+            id: header
+            color: "#00ff0000"
+            border.width: 2
+            Layout.fillHeight: false
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+            Layout.fillWidth: true
+            Layout.preferredWidth: 0
+            Layout.preferredHeight: 40
+        }
 
-            Text {
-                id: titleText
-                text: qsTr("DC Sensor 1")
+        Rectangle {
+            id: sensorInfo
+            Layout.alignment: Qt.AlignRight
+            color: "#00008000"
+            border.width: 2
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            Layout.preferredWidth: 40
+            Layout.preferredHeight: 70
+
+            ScrollView {
+                id: scrollView
                 anchors.fill: parent
-                font.pixelSize: 20
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                font.weight: Font.Bold
+                clip: true;
+
+                ColumnLayout {
+                    id: columnLayout
+                    anchors.fill: parent
+
+                    Rectangle {
+                        id: rectangle
+                        width: 200
+                        height: 200
+                        color: "#a3ca6f"
+                        Layout.fillHeight: false
+                        Layout.fillWidth: true
+
+                        RowLayout {
+                            id: rowLayout
+                            anchors.fill: parent
+
+                            Button {
+                                id: button5
+                                text: qsTr("Button")
+                            }
+
+                            Button {
+                                id: button6
+                                text: qsTr("Button")
+                            }
+
+                            Button {
+                                id: button7
+                                text: qsTr("Button")
+                            }
+                        }
+                    }
+
+                    Rectangle {
+                        id: rectangle1
+                        width: 200
+                        height: 200
+                        color: "#677851"
+                        Layout.fillWidth: true
+                        Layout.fillHeight: false
+                    }
+
+                    Rectangle {
+                        id: rectangle2
+                        width: 200
+                        height: 200
+                        color: "#368536"
+                        Layout.fillWidth: true
+                        Layout.fillHeight: false
+                    }
+
+                    Rectangle {
+                        id: rectangle3
+                        width: 200
+                        height: 200
+                        color: "#8a7557"
+                        Layout.fillWidth: true
+                        Layout.fillHeight: false
+                    }
+
+                    Rectangle {
+                        id: rectangle4
+                        width: 200
+                        height: 200
+                        color: "#248065"
+                        Layout.fillWidth: true
+                        Layout.fillHeight: false
+                    }
+                }
             }
         }
 
         Rectangle {
-            id: measurementArea
-            color: "#ffffff"
-            anchors.fill: parent
-            anchors.topMargin: 40
+            id: footer
+            Layout.alignment: Qt.AlignBottom
+            Layout.fillHeight: false
+            color: "#000000ff"
+            border.width: 2
+            Layout.fillWidth: true
+            Layout.preferredWidth: 0
+            Layout.preferredHeight: 40
 
-            Grid {
-                id: measurements
+            RowLayout {
+                id: screenButtons
                 anchors.fill: parent
-                rows: 2
-                columns: 3
 
-                Rectangle {
-                    id: voltage
-                    width: 200
-                    height: 200
-                    color: "#ffffff"
-
-                    Text {
-                        id: text1
-                        text: qsTr("Voltage 12V")
-                        anchors.fill: parent
-                        font.pixelSize: 12
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                        font.bold: false
-                    }
+                Button {
+                    id: button
+                    text: qsTr("Button")
                 }
 
-                Rectangle {
-                    id: current
-                    width: 200
-                    height: 200
-                    color: "#ffffff"
-
-                    Text {
-                        id: text2
-                        text: qsTr("Current 24A")
-                        anchors.fill: parent
-                        font.pixelSize: 12
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                        font.bold: false
-                    }
+                Button {
+                    id: button1
+                    text: qsTr("Button")
                 }
 
-                Rectangle {
-                    id: power
-                    width: 200
-                    height: 200
-                    color: "#ffffff"
-
-                    Text {
-                        id: text3
-                        text: qsTr("Power 230W")
-                        anchors.fill: parent
-                        font.pixelSize: 12
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                        font.bold: false
-                    }
+                Button {
+                    id: button2
+                    text: qsTr("Button")
                 }
 
-                Rectangle {
-                    id: temperature
-                    width: 200
-                    height: 200
-                    color: "#ffffff"
-
-                    Text {
-                        id: text4
-                        text: qsTr("Temperature 23")
-                        anchors.fill: parent
-                        font.pixelSize: 12
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                        font.bold: false
-                    }
+                Button {
+                    id: button3
+                    text: qsTr("Button")
                 }
 
-                Rectangle {
-                    id: energy
-                    width: 200
-                    height: 200
-                    color: "#ffffff"
-
-                    Text {
-                        id: text5
-                        text: qsTr("Energy 1000J")
-                        anchors.fill: parent
-                        font.pixelSize: 12
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                        font.bold: false
-                    }
+                Button {
+                    id: button4
+                    text: qsTr("Button")
                 }
 
-                Rectangle {
-                    id: charge
-                    width: 200
-                    height: 200
-                    color: "#ffffff"
-
-                    Text {
-                        id: text6
-                        text: qsTr("Charge 123")
-                        anchors.fill: parent
-                        font.pixelSize: 12
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                        font.bold: false
-                    }
-                }
             }
         }
     }
