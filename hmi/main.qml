@@ -15,7 +15,6 @@ Window {
 
         Rectangle {
             id: header
-            color: "#00ff0000"
             border.width: 2
             Layout.fillHeight: false
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
@@ -27,85 +26,58 @@ Window {
         Rectangle {
             id: sensorInfo
             Layout.alignment: Qt.AlignRight
-            color: "#00008000"
             border.width: 2
             Layout.fillHeight: true
             Layout.fillWidth: true
-            Layout.preferredWidth: 40
-            Layout.preferredHeight: 70
 
             ScrollView {
                 id: scrollView
                 anchors.fill: parent
+                ScrollBar.vertical.policy: ScrollBar.AlwaysOn
                 clip: true;
 
                 ColumnLayout {
-                    id: columnLayout
+                    id: the_column
                     anchors.fill: parent
 
                     Rectangle {
                         id: rectangle
-                        width: 200
+                        width: parent.width
                         height: 200
-                        color: "#a3ca6f"
-                        Layout.fillHeight: false
+                        color: "#000000"
                         Layout.fillWidth: true
-
-                        RowLayout {
-                            id: rowLayout
-                            anchors.fill: parent
-
-                            Button {
-                                id: button5
-                                text: qsTr("Button")
-                            }
-
-                            Button {
-                                id: button6
-                                text: qsTr("Button")
-                            }
-
-                            Button {
-                                id: button7
-                                text: qsTr("Button")
-                            }
-                        }
                     }
 
                     Rectangle {
                         id: rectangle1
-                        width: 200
+                        width: parent.width
                         height: 200
-                        color: "#677851"
+                        color: "#db7979"
                         Layout.fillWidth: true
-                        Layout.fillHeight: false
                     }
 
                     Rectangle {
                         id: rectangle2
-                        width: 200
+                        width: parent.width
                         height: 200
-                        color: "#368536"
+                        color: "#982323"
                         Layout.fillWidth: true
-                        Layout.fillHeight: false
                     }
 
                     Rectangle {
                         id: rectangle3
-                        width: 200
+                        width: parent.width
                         height: 200
-                        color: "#8a7557"
+                        color: "#5d1f1f"
                         Layout.fillWidth: true
-                        Layout.fillHeight: false
                     }
 
                     Rectangle {
                         id: rectangle4
-                        width: 200
+                        width: parent.width
                         height: 200
-                        color: "#248065"
+                        color: "#cf6b6b"
                         Layout.fillWidth: true
-                        Layout.fillHeight: false
                     }
                 }
             }
@@ -115,7 +87,6 @@ Window {
             id: footer
             Layout.alignment: Qt.AlignBottom
             Layout.fillHeight: false
-            color: "#000000ff"
             border.width: 2
             Layout.fillWidth: true
             Layout.preferredWidth: 0
@@ -123,7 +94,10 @@ Window {
 
             RowLayout {
                 id: screenButtons
-                anchors.fill: parent
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.top: parent.top
+                spacing: 15
+                anchors.horizontalCenter: parent.horizontalCenter
 
                 Button {
                     id: button
