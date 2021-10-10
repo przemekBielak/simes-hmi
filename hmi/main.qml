@@ -17,7 +17,7 @@ Window {
             id: header
             border.width: 2
             Layout.fillHeight: false
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+            Layout.alignment: Qt.AlignTop
             Layout.fillWidth: true
             Layout.preferredWidth: 0
             Layout.preferredHeight: 40
@@ -33,21 +33,17 @@ Window {
             }
         }
 
-        Rectangle {
-            id: sensorInfo
-            Layout.alignment: Qt.AlignRight
-            border.width: 2
-            Layout.fillHeight: true
-            Layout.fillWidth: true
 
-            Loader {
-                id: sensorLoader
-                anchors.fill: parent
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-                source: "Sensor1.qml"
-            }
+
+        Loader {
+            id: sensorLoader
+            Layout.alignment: Qt.AlignCenter
+            anchors.fill: parent
+            source: "Sensor1.qml"
+            anchors.topMargin: 40
+            Layout.fillWidth: true
         }
+
 
         Rectangle {
             id: footer
