@@ -21,6 +21,16 @@ Window {
             Layout.fillWidth: true
             Layout.preferredWidth: 0
             Layout.preferredHeight: 40
+
+            Text {
+                id: sensorId
+                text: qsTr("Sensor 1")
+                anchors.bottom: parent.bottom
+                anchors.fill: parent
+                font.pixelSize: 22
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
@@ -30,56 +40,12 @@ Window {
             Layout.fillHeight: true
             Layout.fillWidth: true
 
-            ScrollView {
-                id: scrollView
+            Loader {
+                id: sensorLoader
                 anchors.fill: parent
-                ScrollBar.vertical.policy: ScrollBar.AlwaysOn
-                clip: true;
-
-                ColumnLayout {
-                    id: the_column
-                    anchors.fill: parent
-
-                    Rectangle {
-                        id: rectangle
-                        width: parent.width
-                        height: 200
-                        color: "#000000"
-                        Layout.fillWidth: true
-                    }
-
-                    Rectangle {
-                        id: rectangle1
-                        width: parent.width
-                        height: 200
-                        color: "#db7979"
-                        Layout.fillWidth: true
-                    }
-
-                    Rectangle {
-                        id: rectangle2
-                        width: parent.width
-                        height: 200
-                        color: "#982323"
-                        Layout.fillWidth: true
-                    }
-
-                    Rectangle {
-                        id: rectangle3
-                        width: parent.width
-                        height: 200
-                        color: "#5d1f1f"
-                        Layout.fillWidth: true
-                    }
-
-                    Rectangle {
-                        id: rectangle4
-                        width: parent.width
-                        height: 200
-                        color: "#cf6b6b"
-                        Layout.fillWidth: true
-                    }
-                }
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                source: "Sensor1.qml"
             }
         }
 
@@ -101,27 +67,44 @@ Window {
 
                 Button {
                     id: button
-                    text: qsTr("Button")
+                    text: qsTr("Sensor 1")
+                    onClicked: {
+                        sensorId.text = "Sensor 1"
+                        sensorLoader.source = "Sensor1.qml"
+                    }
                 }
 
                 Button {
                     id: button1
-                    text: qsTr("Button")
+                    text: qsTr("Sensor 2")
+                    onClicked: {
+                        sensorId.text = "Sensor 2"
+                        sensorLoader.source = "Sensor2.qml"
+                    }
                 }
 
                 Button {
                     id: button2
-                    text: qsTr("Button")
+                    text: qsTr("Sensor 3")
+                    onClicked: {
+                        sensorId.text = "Sensor 3"
+                    }
                 }
 
                 Button {
                     id: button3
-                    text: qsTr("Button")
+                    text: qsTr("Sensor 4")
+                    onClicked: {
+                        sensorId.text = "Sensor 4"
+                    }
                 }
 
                 Button {
                     id: button4
-                    text: qsTr("Button")
+                    text: qsTr("Sensor 5")
+                    onClicked: {
+                        sensorId.text = "Sensor 5"
+                    }
                 }
 
             }

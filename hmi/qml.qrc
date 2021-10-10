@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>Sensor1.qml</file>
+        <file>Sensor2.qml</file>
     </qresource>
 </RCC>
